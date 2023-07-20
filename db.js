@@ -8,7 +8,8 @@ const DB_PASS = process.env.DB_PASSWORD;
 const connection = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
   host: "localhost",
   dialect: "postgres",
-  pool:{max:5,min:0,idle:10000}
+  pool:{max:5,min:0,idle:10000},
+  port:process.env.DB_PORT
 });
 
 const db = {};
