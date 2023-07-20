@@ -1,7 +1,7 @@
 const { Sequelize,DataTypes } = require("sequelize");
 const redis = require('redis');
 const REDIS_URL = process.env.REDIS_URL;
-let redisClient = redis.createClient(REDIS_URL);
+// let redisClient = redis.createClient(REDIS_URL);
 const DB_NAME = process.env.DB_NAME;
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASSWORD;
@@ -50,8 +50,8 @@ db.user.hasMany(db.comments, {
 
 (async () => {
   try {
-    redisClient = await redisClient.connect();
-    await connection.authenticate();
+    // redisClient = await redisClient.connect();
+    // await connection.authenticate();
     connection.sync({
       alter:true
     });
@@ -62,5 +62,5 @@ db.user.hasMany(db.comments, {
 module.exports = {
   connection,
   db,
-  redisClient
+  // redisClient
 };

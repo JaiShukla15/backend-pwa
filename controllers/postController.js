@@ -1,5 +1,5 @@
 const { Op, Sequelize } = require("sequelize");
-const { db, redisClient } = require("../db");
+const { db } = require("../db");
 const { createError } = require("../errors/customError");
 const asyncHandler = require("../middlewares/asyncHandler");
 module.exports = {
@@ -33,7 +33,7 @@ module.exports = {
           },
         ],
       };
-      await redisClient.set(query, null);
+      // await redisClient.set(query, null);
       return res
         .status(201)
         .json({ result: newPost, message: "Post Created Successfully" });
@@ -117,13 +117,13 @@ module.exports = {
         },
       ],
     };
-    const allPosts = await redisClient.get(query);
-    if (allPosts) {
-      console.log('SERVING FROM CACHE !!!!')
-      return res.json({ result: JSON.parse(allPosts) });
-    }
+    // const allPosts = await redisClient.get(query);
+    // if (allPosts) {
+    //   console.log('SERVING FROM CACHE !!!!')
+    //   return res.json({ result: JSON.parse(allPosts) });
+    // }
     const posts = await db.posts.findAll(query);
-    await redisClient.set(query, JSON.stringify(posts));
+    // await redisClient.set(query, JSON.stringify(posts));
     res.json({ result: posts });
   }),
   deletePost: asyncHandler(async (req, res, next) => {
