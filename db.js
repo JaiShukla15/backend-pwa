@@ -12,7 +12,11 @@ const DB_PASS = process.env.DB_PASSWORD;
 //   port:process.env.DB_PORT
 // });
 
-const connection = new Sequelize('postgres://blog_3n3c_user:M1qieBSsbmaoU7Gtsr0XqYGbeLbfCgDq@dpg-cisqh5h8g3n42ohdn220-a.oregon-postgres.render.com/blog_3n3c');
+const connection = new Sequelize('postgres://blog_3n3c_user:M1qieBSsbmaoU7Gtsr0XqYGbeLbfCgDq@dpg-cisqh5h8g3n42ohdn220-a/blog_3n3c', {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  dialectOptions: {}, //removed ssl
+});
 
 const db = {};
 
