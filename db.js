@@ -5,12 +5,14 @@ const REDIS_URL = process.env.REDIS_URL;
 const DB_NAME = process.env.DB_NAME;
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASSWORD;
-const connection = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
-  host: "localhost",
-  dialect: "postgres",
-  pool:{max:5,min:0,idle:10000},
-  port:process.env.DB_PORT
-});
+// const connection = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
+//   host: "localhost",
+//   dialect: "postgres",
+//   pool:{max:5,min:0,idle:10000},
+//   port:process.env.DB_PORT
+// });
+
+const connection = new Sequelize('postgres://blog_3n3c_user:M1qieBSsbmaoU7Gtsr0XqYGbeLbfCgDq@dpg-cisqh5h8g3n42ohdn220-a.oregon-postgres.render.com/blog_3n3c');
 
 const db = {};
 
