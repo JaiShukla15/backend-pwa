@@ -30,7 +30,7 @@ app.use("/api/chats", require("./routes/chat"));
 app.use(ErrorHandler);
 const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
-  res.json({ message: "Hello World" });
+  res.send('<h1>Server is working</h1>')
 });
 
 app.listen(PORT, () => {
