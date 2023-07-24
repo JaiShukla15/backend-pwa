@@ -43,6 +43,7 @@ module.exports = {
         });
     },
     sendMessage: async (req, res) => {
+        console.log('REQUEST CAME #####',req.url);
         const userId = req.session['user'].userId;
         const {receiver_id, message } = req.body;
         if (!receiver_id || !message) return res.json({ message: 'details missing' })
