@@ -22,7 +22,8 @@
     "redis": "^4.0.6",
     "sequelize": "^6.5.0",
     "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-ui-express": "^4.3.0",
+    "web-push": "3.6.3"
   },
   "devDependencies": { 
   },
