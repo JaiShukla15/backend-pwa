@@ -1,19 +1,5 @@
 const { Op } = require("sequelize");
 const { db } = require("../db");
-// const webPush = require('web-push');
-
-
-// console.log(webPush.generateVAPIDKeys());
-
-
-const publicKey = 'BN69bTRuil6wT1gdV_daOX6usqgVZofjaFUDFz-2WtKeC2YlUGEMz8vvVbqhuA-cp8IwBFfrde6Dp3QhiEwgyfc';
-const privateKey = 'mLVmbk81MabnJN3UETnwbV-4LdMsSEmqVey7QqRFogI';
-
-
-const sub = {"endpoint":"https://fcm.googleapis.com/fcm/send/dxW1nTP8cp8:APA91bFk75BXSjh5WB6FCJjhiiuDd8CFgD5am8bZRuzmdSm0Cgr48QfRqogD037l2cNa2OjIt-QgOyOB0-gKBKppWHT5JDe5Iaj1pPFxTFQUwGKJLkuQMUwwQp1XUG_4qA5FFJ_TW3oi","expirationTime":null,"keys":{"p256dh":"BKXWSFDWvuLIL4aBuIVSue2rLhCUPFBE8KiQm3aqYudg15pagMo6simLk6DDONQXAGr-YGgd_pS9ecZ9deipzWg","auth":"rEUZnC9TCCFEMgLYARo7xg"}}
-
-// webPush.setVapidDetails('mailto:example@yopmail.com', publicKey, privateKey);
-
 
 module.exports = {
     getChats: async (req, res) => {
