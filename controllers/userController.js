@@ -82,7 +82,7 @@ module.exports = {
       let token = await jwt.sign(
         { email: foundUser.email, userId: foundUser.id },
         process.env.JWT_SECRET,
-        { expiresIn: "3000s" }
+        { expiresIn: "1d" }
       );
       let refreshToken = await jwt.sign(
         { email: foundUser.email, userId: foundUser.id },
